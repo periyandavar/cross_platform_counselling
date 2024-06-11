@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+{% include "clge/css.html" %}
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+            <!-- END HEADER DESKTOP-->
+             {% include "clge/header.html" %}
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb m-t-75">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="au-breadcrumb-content">
+                                  <center> New Course </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><br>
+            <!-- END BREADCRUMB-->
+<section>
+            <!-- STATISTIC-->
+			 <div class="row">
+			            <div class="col-lg-1"></div>
+
+            <div class="col-lg-9">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Add a Course</strong> 
+                                    </div>
+                                    <div class="card-body card-block">
+									
+                                 <form action="http://localhost:5000/update_course" method="post" class="">
+
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Course Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input {%if data%} value="{{data[0]}}" {%endif%} type="text" id="text-input" required name="name" placeholder="Course Name" class="form-control">
+                                                    <small class="form-text text-muted">Course Name....</small>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input"  class=" form-control-label">Describtion</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="desc" id="textarea-input" required rows="9" placeholder="Content..." class="form-control">{%if data%} {{data[1]}} {%endif%}</textarea>
+                                                    <small class="help-block form-text">Describtion....</small>
+                                                </div>
+                                            </div>
+                                            
+                                               
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="selectLg" class=" form-control-label">Student Must have</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <select name="must" id="selectLg" required class="form-control-lg form-control">
+													    {%if data%} <option value="{{data[2]}}"> {{data[2].capitalize()}}</option>{%endif%}
+                                                        {%if data[2]!='none'%}<option value='none'>None </option>{%endif%}
+														{%if data[2]!='maths'%}<option value="maths">Maths</option>{%endif%}
+                                                        {%if data[2]!='biology'%}<option value="biology">Biology</option>{%endif%}
+                                                        {%if data[2]!='botony'%}<option value="botony">Botony</option>{%endif%}
+                                                        {%if data[2]!='zology'%}<option value="zology">Zology</option>{%endif%}
+														{%if data[2]!='economics'%}<option value="economics">Economics</option>{%endif%}
+                                                    </select>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="min" class=" form-control-label">Minimum Marks in all Subject</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" id="text-input" {%if data%} value="{{data[3]}}" {%endif%} required name="text-input" placeholder="minimum Marks" class="form-control">
+                                                    <small class="form-text text-muted">Minimum Marks....</small>
+                                                </div>
+												</div>
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Available Seats (Open Competiotion)</label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" {%if data%} value="{{data[4]}}" {%endif%} required name="open" placeholder="Open Competiotion" class="form-control">
+                                                    <small class="form-text text-muted">Open Competiotion....</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="fopen" placeholder="filled Seats" {%if data%} value="{{data[19]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled Open seats..</small>
+                                                </div>
+												</div>
+												
+												
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input" class=" bc">Available Seats (BC)</label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" {%if data%} value="{{data[5]}}" {%endif%} name="bc" required placeholder="BC Seats" class="form-control">
+                                                    <small class="form-text text-muted">Seats for BC..</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="sbc" placeholder="filled Seats" {%if data%} value="{{data[13]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled BC seats..</small>
+                                                </div>
+												</div>
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input" required class=" form-control-label">Available Seats (MBC)</label>
+                                                </div>
+												
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" {%if data%} value="{{data[6]}}" {%endif%} required name="mbc" placeholder="MBC Seats" class="form-control">
+                                                    <small class="form-text text-muted">Seats for MBC..</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="fmbc" placeholder="filled Seats" {%if data%} value="{{data[14]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled MBC seats..</small>
+                                                </div>
+												</div>
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Available Seats (SC)</label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" required name="sc" {%if data%} value="{{data[7]}}" {%endif%} placeholder="SC Seats" class="form-control">
+                                                    <small class="form-text text-muted">Seats for SC..</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="fsc" placeholder="filled Seats" {%if data%} value="{{data[15]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled SC seats..</small>
+                                                </div>
+												</div>
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Available Seats (OC)</label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" required name="oc" {%if data%} value="{{data[8]}}" {%endif%} placeholder="OC Seats" class="form-control">
+                                                    <small class="form-text text-muted">Seats for OC..</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="foc" placeholder="filled Seats" {%if data%} value="{{data[16]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled OC seats..</small>
+                                                </div>
+												</div>
+												               <input type="hidden" value='0' id="text-input" required name="male" placeholder="Male Seats" class="form-control">
+
+												<div class="row form-group">
+											<div class="col col-md-3">
+                                                    <label for="text-input"  required class=" form-control-label">Available Seats (Female)</label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" {%if data%} value="{{data[9]}}" {%endif%} name="female" placeholder="Female Seats" class="form-control">
+                                                    <small class="form-text text-muted">Seats for Female..</small>
+                                                </div>
+												<div class="col-12 col-md-1"></div>
+												<div class="col-12 col-md-4">
+                                                    <input type="number" id="text-input" name="ffemale" placeholder="Filed Seats" {%if data%} value="{{data[17]}}" {%endif%} class="form-control">
+                                                    <small class="form-text text-muted">Applied or filled Female seats..</small>
+                                                </div>
+												
+												</div>
+																								<div class="row form-group">
+
+												<div class="col col-md-3">
+                                                    <label for="text-input"   class=" form-control-label">Course Duration</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" {%if data%} value="{{data[11]}}"{%endif%} required id="text-input" name="duration" placeholder="Duration" class="form-control">
+                                                    <small class="form-text text-muted">Duration..</small>
+                                                </div>
+												</div>
+																						<div class="row form-group">
+
+												<div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Fees per year</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" {%if data%} value="{{data[10]}}" {%endif%} required id="text-input" name="fee" placeholder="Fees" class="form-control">
+                                                    <small class="form-text text-muted">Fees..</small>
+                                                </div>
+												</div>
+																				<div class="row form-group">
+
+												<div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Application form link</label>
+                                                </div>
+												
+                                                <div class="col-12 col-md-9">
+                                                    <input type="url" {%if data%} value="{{data[12]}}" {%endif%} required id="text-input" name="link" placeholder="Application" class="form-control">
+													{%if data%}<input type='hidden' name='id' value="{{data[18]}}">{%endif%}
+                                                    <small class="form-text text-muted">Link..</small>
+                                                </div>
+												</div>
+                                            
+                                       
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" name='update' value='yes' class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                                                        {%if message %}
+								{{message}}
+								{%endif%}
+                                    </div>
+                                </div>
+								</form>
+
+                            </div>
+							</div>
+                            </section>
+            <!-- END STATISTIC-->
+
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+	{% include "clge/js.html" %}
+</body>
+
+</html>
+<!-- end document-->

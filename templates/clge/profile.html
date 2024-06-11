@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+{% include "clge/css.html" %}
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- MENU SIDEBAR-->
+            <!-- END HEADER DESKTOP-->
+             {% include "clge/header.html" %}
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb m-t-75">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="au-breadcrumb-content">
+                                  <center> Profile </center>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><br>
+            <!-- END BREADCRUMB-->
+<section>
+            <!-- STATISTIC-->
+			 <div class="row">
+			            <div class="col-lg-1"></div>
+
+            <div class="col-lg-9">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Edit Profile</strong> 
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="http://localhost:5000/clge_update" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">College Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}value="{{data[0]}}"{%endif%} id="text-input" name="name" placeholder="College Name" class="form-control">
+                                                    <small class="form-text text-muted">College Name</small>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input"  class=" form-control-label">Discription</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="dis" id="textarea-input"  rows="9" placeholder="Discription..." class="form-control">{%if data%}{{data[1]}}{%endif%}</textarea>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Website</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="url" id="text-input" name="page" {%if data%}value="{{data[2]}}"{%endif%} placeholder="website url" class="form-control">
+                                                    <small class="form-text text-muted">College website</small>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Location</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="loc"  id="textarea-input" rows="9" placeholder="Location..." class="form-control">{%if data%}{{data[3]}}{%endif%}</textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">District</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="email-input" {%if data%}value="{{data[4]}}"{%endif%} name="dist" placeholder="Enter District" class="form-control">
+                                                    <small class="help-block form-text">Please enter District</small>
+                                                </div>
+                                            </div>
+                                            
+                                     
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" name='update' value='yes' class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        {%if message%}
+										{{message}}
+										{%endif%}
+                                    </div>
+									   </form>
+                                </div>
+                                
+                            </div>
+							</div>
+                            </section>
+            <!-- END STATISTIC-->
+
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+	{% include "clge/js.html" %}
+</body>
+
+</html>
+<!-- end document-->

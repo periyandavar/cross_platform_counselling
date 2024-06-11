@@ -1,0 +1,139 @@
+
+            <!-- STATISTIC-->
+			 <div class="row">
+			            <div class="col-lg-1"></div>
+
+            <div class="col-lg-10">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Edit Profile</strong> 
+                                    </div>
+                                    <div class="card-body card-block">
+                                 <form action="http://localhost:5000/edit" method="post" class="">
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input"  class=" form-control-label">Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" disabled {%if data%}{%if data[0]!=None %} value="{{data[0]}}" {%endif%}{%endif%} id="text-input" name="name" placeholder="Name" class="form-control">
+                                                    <small class="form-text text-muted">Name</small>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">Qualification</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}{%if data[1]!=None %} value="{{data[1]}}"{%endif%} {%endif%} id="email-input" name="qual" placeholder="Qualification" class="form-control">
+                                                    <small class="help-block form-text">qualification</small>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">DOB</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="date" {%if data%}{%if data[2]!=None %} value="{{data[2]}}"{%endif%} {%endif%} id="email-input" name="dob" placeholder="DOB" class="form-control">
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="disabled-input" class=" form-control-label">Age</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" {%if data%}{%if data[3]!=None %} value="{{data[3]}}"{%endif%} {%endif%} id="email-input" name="age" placeholder="Age" class="form-control">
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">District</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}{%if data[4]!=None %} value="{{data[4]}}"{%endif%} {%endif%} id="email-input" name="dist" placeholder="District" class="form-control">
+                                                    <small class="help-block form-text">District</small>
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="password-input" class=" form-control-label">gender</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}{%if data[11]!=None %} value="{{data[11]}}"{%endif%} {%endif%} id="email-input" name="gender" placeholder="Gender" class="form-control">
+                                                    <small class="help-block form-text">gender</small>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="password-input" class=" form-control-label">caste</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}{%if data[5]!=None %} value="{{data[5]}}"{%endif%} {%endif%} id="email-input" name="caste" placeholder="Caste" class="form-control">
+                                                    <small class="help-block form-text">caste</small>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="disabled-input" class=" form-control-label">Minimum marks</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="number" {%if data%}{%if data[6]!=None %} value="{{data[6]}}"{%endif%} {%endif%} id="email-input" name="mark" placeholder="Minimum Marks" class="form-control">
+                                                    <small class="help-block form-text">Minimum marks</small>
+													
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">subject 1</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" {%if data%}{%if data[7]!=None %} value="{{data[7]}}"{%endif%} {%endif%} id="email-input" name="s1" placeholder="Subject Name 1" class="form-control">
+                                                    <small class="help-block form-text">Please enter the Subject Name 1</small>
+                                                  
+												</div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="select" class=" form-control-label">Subject 2</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                              <input type="text" {%if data%}{%if data[8]!=None %} value="{{data[8]}}"{%endif%} {%endif%} id="email-input" name="s2" placeholder="Subject Name 2" class="form-control">
+											  <small class="help-block form-text">Please enter the Subject Name 2</small>
+
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="selectLg" class=" form-control-label">Subject 3</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                            <input type="text" {%if data%}{%if data[9]!=None %} value="{{data[9]}}"{%endif%} {%endif%} id="email-input" name="s3" placeholder="Subject Name 3" class="form-control">
+                                               <small class="help-block form-text">Please enter the Subject Name 3</small>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="selectSm" class=" form-control-label">Subject 4</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                            <input type="text" {%if data%}{%if data[10]!=None %} value="{{data[10]}}"{%endif%} {%endif%} id="email-input" name="s4" placeholder="Subject Name 4" class="form-control">
+                                                <small class="help-block form-text">Please enter the Subject Name 4</small>
+												</div>
+                                            </div>
+                                            
+                                        
+                                    </div>
+                                    <div class="card-footer">
+                                        <button type="submit" name='update' value='yes' class="btn btn-primary btn-sm">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        {%if message%}
+										{{message}}
+										{%endif%}
+										
+                                    </div></form>
+                                </div>
+                                
+                            </div>
+							</div>
+            

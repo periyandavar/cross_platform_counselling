@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>feedback</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--==============================================
+=================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/static/cust/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/cust/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/cust/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/static/cust/images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form action='http://localhost:5000/feed' method="POST" class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						feedback
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter your mail id">
+						<input class="input100" type="mail" name="mail" placeholder="Mail id">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter your feedback">
+						Enter your feedback<br><textarea class='input100' required name='fb' >  </textarea>
+						
+						
+					</div>
+
+				
+
+					<div class="container-login100-form-btn">
+						<button name="fb" value='yes' class="login100-form-btn">
+							send
+						</button>
+					</div>
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/cust/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/static/cust/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/cust/js/main.js"></script>
+
+</body>
+</html>
